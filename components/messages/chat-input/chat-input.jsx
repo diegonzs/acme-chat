@@ -14,7 +14,10 @@ export const ChatInput = ({ value, setValue, sendMessage }) => {
         placeholder="Type something..."
         onChange={(e) => setValue(e.target.value)}
       />
-      <div className="icon-container" onClick={() => sendMessage()}>
+      <div
+        className="icon-container"
+        onClick={() => (!!value ? sendMessage() : null)}
+      >
         <RiSendPlaneFill size="25px" color="#4C5262" />
       </div>
       <style jsx>{`
